@@ -1,5 +1,5 @@
 <template>
-  <div class="app-container">
+  <div class="app-container" >
     <!-- 在Mint UI中的组件 -->
     <mt-header fixed title="vue项目"></mt-header>
     <transition>
@@ -42,6 +42,11 @@ export default {
 </script>
 
 <style scoped>
+
+.mint-header{
+  font-size: 30px;
+  letter-spacing: 2px;
+}
 .app-container {
   padding-top: 40px;
   overflow-x: hidden;
@@ -61,4 +66,5 @@ export default {
 .v-leave-active {
   transition: all 0.5s ease;
 }
+
 </style>
