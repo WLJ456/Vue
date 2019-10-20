@@ -8,7 +8,8 @@
       </p>
       <hr>
       <div class="content">内容为：{{id}}</div>
-      <comment-box></comment-box>
+      <!-- 父组件传递参数给子组件 -->
+      <comment-box :cid="id"></comment-box>
   </div> 
   
 </template>
@@ -21,13 +22,16 @@ export default {
 
   data() {
     return {
-        id:this.$route.params.id
+        //获取传参
+        id:this.$route.params.id,
+      
     };
   },
-  methods: {},
   components:{
       
       "comment-box":comment},
+
+
 };
 </script>
 

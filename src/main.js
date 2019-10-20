@@ -14,7 +14,6 @@ Vue.filter('dateFormat',function(dataStr,pattern="YYYY-MM-DD HH:mm"){
 
 import VueResource from 'vue-resource'
 Vue.use(VueResource)
-Vue.http.options.root='http://vue.studyit.io'
 import router from './router.js'
 //手动导入mui三方库
 import './lib/MUI/css/mui.min.css'
