@@ -31,10 +31,10 @@
         </a>
       </li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-        <a href="#">
+        <router-link to="/home/news">
           <span class="mui-icon mui-icon-chatbubble"></span>
-          <div class="mui-media-body">Chat</div>
-        </a>
+          <div class="mui-media-body">WeChat</div>
+        </router-link>
       </li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
         <a href="#">
@@ -43,10 +43,10 @@
         </a>
       </li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-        <a href="#">
+        <router-link  to="/search">
           <span class="mui-icon mui-icon-search"></span>
           <div class="mui-media-body">Search</div>
-        </a>
+        </router-link >
       </li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
         <a href="#">

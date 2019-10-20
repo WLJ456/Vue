@@ -1,9 +1,12 @@
+//再次导入vuerouter因为需要新建router实例
 import VueRouter from 'vue-router'
-
+//导入需要用的路由组件
 import shopcar from './components/tabbar/shopcar.vue'
 import search from './components/tabbar/search.vue'
 import member from './components/tabbar/member.vue'
 import home from './components/tabbar/home.vue'
+import news from './components/news/news.vue'
+import newsInfo from './components/news/newsInfo.vue'
 var router=new VueRouter({
 
     routes:[
@@ -12,6 +15,9 @@ var router=new VueRouter({
         {path:'/home',component:home},
         {path:'/shopcar',component:shopcar},
         {path:'/search',component:search},
+        {path:'/home/news',component:news},
+        //用：匹配参数
+        {path:'/home/news/newsInfo/:id',component:newsInfo},
     ],
     linkActiveClass:'mui-active'//覆盖默认路由高亮的类
 })
