@@ -90,7 +90,8 @@ export default {
       var len = this.cmtMsg.length;
       var cmtDemo = {
         id: len + 1,
-        name: this.user,
+        //生成随机用户名
+        name: this.getRondom(),
         msg: this.content,
         time: new Date().toLocaleString()
       };
