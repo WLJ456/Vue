@@ -1,7 +1,7 @@
 <template>
   <div class="app-container" >
     <!-- 在Mint UI中的组件 -->
-    <mt-header fixed title="vue综合项目"></mt-header>
+    <mt-header fixed title="综合项目"></mt-header>
     <transition>
       <router-view></router-view>
     </transition>
