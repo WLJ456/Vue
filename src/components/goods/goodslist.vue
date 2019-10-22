@@ -1,0 +1,81 @@
+<template>
+  <div class="goods-list" >
+    <div class="goods-item" v-for="(item, index) in 9" :key="index">
+      <img
+        src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/e52c3e98602b90f198ec316dce253cba.jpg?thumb=1&w=1226&h=460&f=webp&q=90"
+        height="200px"
+        width="200px"
+      />
+      <h1 class="title">小米电视</h1>
+      <div class="info">
+        <p class="price">
+          <span class="now">￥2199</span>
+          <span class="old">￥9999</span>
+        </p>
+          <p class="sell">
+          <span>热卖中</span>
+          <span>剩余60</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "",
+  data() {
+    return {};
+  },
+  methods: {}
+};
+</script>
+
+<style scoped>
+.goods-list {
+  display: flex;
+  flex-wrap: wrap;
+  /* 换行排列 */
+  padding: 7px;
+  justify-content: space-between;
+   
+}
+.goods-item {
+  width: 49%;
+  border: 1px solid #ccc;
+  box-shadow: 0px 0px 8px #ccc;
+  margin: 4px 0;
+    /* 改变主轴方向 即纵向spacebetween */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 200px;
+}
+.goods-item img {
+  width: 100%;
+}
+.title {
+  font-size: 16px;
+}
+.info {
+  background-color: #cccc;
+}
+.price {
+  margin: 0;
+  padding: 4px;
+}
+.now {
+  color: red;
+  font-weight: bold;
+  font-size: 16px;
+}
+.old {
+  text-decoration: line-through;
+  font-size: 12px;
+  margin-left: 10px;
+}
+.sell {
+  display: flex;
+  justify-content: space-between;
+}
+</style>

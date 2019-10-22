@@ -15,23 +15,16 @@
 </template>
 
 <script>
-
-
 import comment from '../subcompoents/comment.vue'
 export default {
-
   data() {
     return {
         //获取传参
         id:this.$route.params.id,
-      
     };
   },
   components:{
-      
-      "comment-box":comment},
-
-
+      "comment-box":comment}, 
 };
 </script>
 

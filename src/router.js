@@ -7,6 +7,8 @@ import member from './components/tabbar/member.vue'
 import home from './components/tabbar/home.vue'
 import news from './components/news/news.vue'
 import newsInfo from './components/news/newsInfo.vue'
+
+import goodslist from './components/goods/goodslist.vue'
 var router=new VueRouter({
 
     routes:[
@@ -18,6 +20,8 @@ var router=new VueRouter({
         {path:'/home/news',component:news},
         //用：匹配参数
         {path:'/home/news/newsInfo/:id',component:newsInfo},
+        {path:'/home/goodslist',component:goodslist},
+        
     ],
     linkActiveClass:'mui-active'//覆盖默认路由高亮的类
 })

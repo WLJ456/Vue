@@ -17,10 +17,10 @@
 
     <ul class="mui-table-view mui-grid-view mui-grid-9">
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-        <a href="#">
+        <router-link to="/home/goodslist">
           <span class="mui-icon mui-icon-home"></span>
-          <div class="mui-media-body">Home</div>
-        </a>
+          <div class="mui-media-body">商城</div>
+        </router-link>
       </li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
         <a href="#">
