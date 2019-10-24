@@ -1,20 +1,16 @@
 <template>
-  <div class="goods-list" >
-    <div class="goods-item" v-for="(item, index) in 9" :key="index">
-      <img
-        src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/e52c3e98602b90f198ec316dce253cba.jpg?thumb=1&w=1226&h=460&f=webp&q=90"
-        height="200px"
-        width="200px"
-      />
-      <h1 class="title">小米电视</h1>
+  <div class="goods-list">
+    <div class="goods-item" v-for="(item, index) in goodsMsg" :key="index">
+      <img :src="item.src" height="200px" width="200px" />
+      <h1 class="title">{{item.title}}</h1>
       <div class="info">
         <p class="price">
-          <span class="now">￥2199</span>
-          <span class="old">￥9999</span>
+          <span class="now">￥{{item.nowsell}}</span>
+          <span class="old">￥{{item.oldsell}}</span>
         </p>
-          <p class="sell">
+        <p class="sell">
           <span>热卖中</span>
-          <span>剩余60</span>
+          <span>库存{{item.numbers}}</span>
         </p>
       </div>
     </div>
@@ -25,7 +21,110 @@
 export default {
   name: "",
   data() {
-    return {};
+    return {
+      //模拟商品数据
+      goodsMsg: [
+        {
+          id: 1,
+          src:
+            "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/6f2493e6c6fe8e2485c407e5d75e3651.jpg?thumb=1&w=200&h=200&f=webp&q=90",
+          title: "Redmi Note 8 pro",
+          nowsell: 1399,
+          oldsell: 1999,
+          numbers: 3300
+        },
+        {
+          id: 2,
+          src:
+            "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/4c87947d104ee5833913e4c520108f16.jpg?thumb=1&w=200&h=200&f=webp&q=90",
+          title: "Redmi Note 8",
+          nowsell: 999,
+          oldsell: 1399,
+          numbers: 330
+        },
+        {
+          id: 3,
+          src:
+            "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ca9b4f81af709935556bef9aa21a90e8.jpg?thumb=1&w=200&h=200&f=webp&q=90",
+          title: "小米9 Pro 5G",
+          nowsell: 3699,
+          oldsell: 4000,
+          numbers: 2200
+        },
+        {
+          id: 4,
+          src:
+            "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/8737a33c78a94bc36afb860ab23b3939.jpg?thumb=1&w=200&h=200&f=webp&q=90",
+          title: "Redmi K20 Pro 尊享版",
+          nowsell: 2699,
+          oldsell: 3399,
+          numbers: 1200
+        },
+        {
+          id: 5,
+          src:
+            "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/8737a33c78a94bc36afb860ab23b3939.jpg?thumb=1&w=200&h=200&f=webp&q=90",
+          title: "Redmi K20 Pro 尊享版",
+          nowsell: 2699,
+          oldsell: 3399,
+          numbers: 1200
+        },
+        {
+          id: 6,
+          src:
+            "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9aab8a7fa9005ef918c9aa2d5f17c806.jpg?thumb=1&w=200&h=200&f=webp&q=90",
+          title: "Redmi 7",
+          nowsell: 699,
+          oldsell: 799,
+          numbers: 8880
+        },
+        {
+          id: 7,
+          src:
+            "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/3c1af9783bdc53ed843af5655ca92009.jpg?thumb=1&w=200&h=200&f=webp&q=90",
+          title: "Redmi 7A",
+          nowsell: 579,
+          oldsell: 599,
+          numbers: 18880
+        },
+        {
+          id: 8,
+          src:
+            "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/6f2493e6c6fe8e2485c407e5d75e3651.jpg?thumb=1&w=200&h=200&f=webp&q=90",
+          title: "Redmi Note 8 pro",
+          nowsell: 1399,
+          oldsell: 1999,
+          numbers: 3300
+        },
+          {
+          id: 9,
+          src:
+            "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/cd2aa2dcad6440b469c22e27db9b6236.jpg?thumb=1&w=200&h=200&f=webp&q=90",
+          title: "15.6 四核i7 16G 独显 512G",
+          nowsell: 4699,
+          oldsell: 4899,
+          numbers: 1000
+        },
+          {
+          id: 10,
+          src:
+            "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ef6b4e9b9151849b3b1fb1dbf069c6ed.jpg?thumb=1&w=200&h=200&f=webp&q=90",
+          title: "小米全面屏电视E55A",
+          nowsell: 1799,
+          oldsell: 2099,
+          numbers: 1300,
+        },
+           {
+          id: 11,
+          src:
+            "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ec20453216dcd42f982cffe5fdbc3115.jpg?thumb=1&w=200&h=200&f=webp&q=90",
+          title: "米家互联网洗烘一体机 Pro 10kg",
+          nowsell: 2999,
+          oldsell: 3500,
+          numbers: 1000,
+        }
+      ]
+    };
   },
   methods: {}
 };
@@ -38,14 +137,14 @@ export default {
   /* 换行排列  流式布局在listdiv中用一个padding 将元素往中间挤一个7像素，再进行俩边布局*/
   padding: 7px;
   justify-content: space-between;
-   
+  
 }
 .goods-item {
   width: 49%;
   border: 1px solid #ccc;
   box-shadow: 0px 0px 8px #ccc;
   margin: 4px 0;
-    /* 改变主轴方向 即纵向spacebetween */
+  /* 改变主轴方向 即纵向spacebetween */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -77,5 +176,11 @@ export default {
 .sell {
   display: flex;
   justify-content: space-between;
+}
+.goods-item:hover{
+  transition: all 0.4s ease-out;
+ box-shadow: 5px 5px 4px #ccc;
+ transform: scale(130%);
+ 
 }
 </style>

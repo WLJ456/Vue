@@ -46,6 +46,7 @@ export default {
 .mint-header{
   font-size: 30px;
   letter-spacing: 2px;
+  z-index: 99;
 }
 .app-container {
   padding-top: 40px;

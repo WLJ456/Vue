@@ -10,21 +10,24 @@ import newsInfo from './components/news/newsInfo.vue'
 
 import goodslist from './components/goods/goodslist.vue'
 import photolist from './components/photos/photoList.vue'
-var router=new VueRouter({
+import photoinfo from './components/photos/photoinfo.vue'
+var router = new VueRouter({
 
-    routes:[
-        {path:'/',redirect:'/home'},
-        {path:'/member',component:member},
-        {path:'/home',component:home},
-        {path:'/shopcar',component:shopcar},
-        {path:'/search',component:search},
-        {path:'/home/news',component:news},
+    routes: [
+        { path: '/', redirect: '/home' },
+        { path: '/member', component: member },
+        { path: '/home', component: home },
+        { path: '/shopcar', component: shopcar },
+        { path: '/search', component: search },
+        { path: '/home/news', component: news },
         //用：匹配参数
-        {path:'/home/news/newsInfo/:id',component:newsInfo},
-        {path:'/home/goodslist',component:goodslist},
-      
-        {path:'/home/photolist',component:photolist},
+        { path: '/home/news/newsInfo/:id', component: newsInfo },
+        { path: '/home/goodslist', component: goodslist },
+
+        { path: '/home/photolist', component: photolist },
+
+        { path: '/home/photoinfo/:id', component: photoinfo },
     ],
-    linkActiveClass:'mui-active'//覆盖默认路由高亮的类
+    linkActiveClass: 'mui-active'//覆盖默认路由高亮的类
 })
 export default router

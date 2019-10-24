@@ -5,9 +5,7 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 import moment from 'moment';
 Vue.filter('dateFormat', function (dataStr, pattern = "YYYY-MM-DD HH:mm") {
-
     return moment(dataStr).format(pattern)
-
 })
 
 import VueResource from 'vue-resource'
@@ -19,11 +17,12 @@ import './lib/MUI/css/icons-extra.css'
 
 import App from './App.vue'
 //在mint-ui中的vue组件中调用样式,按需导入
-import { Header, Swipe, SwipeItem, Button } from 'mint-ui'
+import { Header, Swipe, SwipeItem, Button,Lazyload} from 'mint-ui'
 Vue.component(Swipe.name, Swipe);
 Vue.component(SwipeItem.name, SwipeItem);
 Vue.component(Header.name, Header)
 Vue.component(Button.name, Button)
+Vue.use(Lazyload)
 
 
 
