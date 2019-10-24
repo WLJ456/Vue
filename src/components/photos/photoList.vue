@@ -98,7 +98,7 @@ export default {
           id: 2,
           title: "自然风光",
           src:
-            "http://a.hiphotos.baidu.com/image/h%3D300/sign=a62e824376d98d1069d40a31113eb807/838ba61ea8d3fd1fc9c7b6853a4e251f94ca5f46.jpg",
+            "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2519022383,499450588&fm=26&gp=0.jpg",
           zhaiyao:
             "风车（windmills），是一种不需燃料、以风作为能源的动力机械。早期风力机又称风车。"
         },
@@ -106,7 +106,7 @@ export default {
           id: 2,
           title: "自然风光",
           src:
-            "http://f.hiphotos.baidu.com/image/h%3D300/sign=0c78105b888ba61ec0eece2f713597cc/0e2442a7d933c8956c0e8eeadb1373f08202002a.jpg",
+            "https://f10.baidu.com/it/u=953873385,1545712302&fm=72",
           zhaiyao:
             "海滩是指由海水搬运积聚的沉积物沙或石砾，堆积而形成的岸，海滩可分为砾石滩（卵石滩）、粗砂滩和细砂滩，有管理的又称海水浴场。"
         },
@@ -114,7 +114,7 @@ export default {
           id: 2,
           title: "自然风光",
           src:
-            "http://b.hiphotos.baidu.com/image/h%3D300/sign=92afee66fd36afc3110c39658318eb85/908fa0ec08fa513db777cf78376d55fbb3fbd9b3.jpg",
+            "https://f12.baidu.com/it/u=308508607,1891770715&fm=72",
           zhaiyao: "是一颗向日葵，浑身充满了阳光的味道，不抬头也知道你在照耀。"
         },
         {
@@ -185,7 +185,7 @@ export default {
       //   }
       //for of 进行数组值的遍历
       for (let index of lists.values()) {
-        if (index.id === id) {
+        if (index.id === id) {0
           this.showlist.push(index);
         }
       }
