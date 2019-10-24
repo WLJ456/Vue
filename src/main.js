@@ -18,7 +18,7 @@ import './lib/MUI/css/mui.min.css'
 import './lib/MUI/css/icons-extra.css'
 
 import App from './App.vue'
-//在mint-ui中的vue组件中调用样式
+//在mint-ui中的vue组件中调用样式,按需导入
 import { Header, Swipe, SwipeItem, Button } from 'mint-ui'
 Vue.component(Swipe.name, Swipe);
 Vue.component(SwipeItem.name, SwipeItem);

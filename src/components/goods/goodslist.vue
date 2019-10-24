@@ -35,7 +35,7 @@ export default {
 .goods-list {
   display: flex;
   flex-wrap: wrap;
-  /* 换行排列 */
+  /* 换行排列  流式布局在listdiv中用一个padding 将元素往中间挤一个7像素，再进行俩边布局*/
   padding: 7px;
   justify-content: space-between;
    

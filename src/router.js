@@ -9,6 +9,7 @@ import news from './components/news/news.vue'
 import newsInfo from './components/news/newsInfo.vue'
 
 import goodslist from './components/goods/goodslist.vue'
+import photolist from './components/photos/photoList.vue'
 var router=new VueRouter({
 
     routes:[
@@ -21,7 +22,8 @@ var router=new VueRouter({
         //用：匹配参数
         {path:'/home/news/newsInfo/:id',component:newsInfo},
         {path:'/home/goodslist',component:goodslist},
-        
+      
+        {path:'/home/photolist',component:photolist},
     ],
     linkActiveClass:'mui-active'//覆盖默认路由高亮的类
 })
