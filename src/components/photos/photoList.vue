@@ -6,7 +6,7 @@
         class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted"
       >
         <div class="mui-scroll">
-          <!-- id为0的时候添加mui-active类 -->
+          <!-- id为0的时候添加mui-active默认高亮类 -->
           <a
             :class="['mui-control-item',items.id===0?'mui-active':'']"
             data-wid="tab-top-subpage-1.html"
