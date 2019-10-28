@@ -115,6 +115,7 @@ export default {
 <style scoped>
 .cmt-container h3 {
   font-size: 18px;
+  margin-top:20px; 
 }
 .cmt-container textarea {
   font-size: 14px;

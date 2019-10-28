@@ -1,6 +1,11 @@
 <template>
   <div class="goods-list">
-    <div class="goods-item" v-for="(item, index) in goodsMsg" :key="index">
+    <div
+      class="goods-item"
+      v-for="(item, index) in goodsMsg"
+      :key="index"
+      @click="goodsListInfo(item.id)"
+    >
       <img :src="item.src" height="200px" width="200px" />
       <h1 class="title">{{item.title}}</h1>
       <div class="info">
@@ -96,7 +101,7 @@ export default {
           oldsell: 1999,
           numbers: 3300
         },
-          {
+        {
           id: 9,
           src:
             "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/cd2aa2dcad6440b469c22e27db9b6236.jpg?thumb=1&w=200&h=200&f=webp&q=90",
@@ -105,28 +110,32 @@ export default {
           oldsell: 4899,
           numbers: 1000
         },
-          {
+        {
           id: 10,
           src:
             "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ef6b4e9b9151849b3b1fb1dbf069c6ed.jpg?thumb=1&w=200&h=200&f=webp&q=90",
           title: "小米全面屏电视E55A",
           nowsell: 1799,
           oldsell: 2099,
-          numbers: 1300,
+          numbers: 1300
         },
-           {
+        {
           id: 11,
           src:
             "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ec20453216dcd42f982cffe5fdbc3115.jpg?thumb=1&w=200&h=200&f=webp&q=90",
           title: "米家互联网洗烘一体机 Pro 10kg",
           nowsell: 2999,
           oldsell: 3500,
-          numbers: 1000,
+          numbers: 1000
         }
       ]
     };
   },
-  methods: {}
+  methods: {
+    goodsListInfo(id) {
+      this.$router.push({ name: "goodslistinfo", params: { id} });
+    }
+  }
 };
 </script>
 
@@ -137,7 +146,6 @@ export default {
   /* 换行排列  流式布局在listdiv中用一个padding 将元素往中间挤一个7像素，再进行俩边布局*/
   padding: 7px;
   justify-content: space-between;
-  
 }
 .goods-item {
   width: 49%;
@@ -177,10 +185,9 @@ export default {
   display: flex;
   justify-content: space-between;
 }
-.goods-item:hover{
+.goods-item:hover {
   transition: all 0.4s ease-out;
- box-shadow: 5px 5px 4px #ccc;
- transform: scale(130%);
- 
+  box-shadow: 5px 5px 4px #ccc;
+  transform: scale(130%);
 }
 </style>

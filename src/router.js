@@ -11,6 +11,7 @@ import newsInfo from './components/news/newsInfo.vue'
 import goodslist from './components/goods/goodslist.vue'
 import photolist from './components/photos/photoList.vue'
 import photoinfo from './components/photos/photoinfo.vue'
+import goodslistinfo from './components/goods/goodslistinfo.vue'
 var router = new VueRouter({
 
     routes: [
@@ -27,6 +28,7 @@ var router = new VueRouter({
         { path: '/home/photolist', component: photolist },
 
         { path: '/home/photoinfo/:id', component: photoinfo },
+        { path: '/home/goodslistinfo/:id', component: goodslistinfo,name:'goodslistinfo'},
     ],
     linkActiveClass: 'mui-active'//覆盖默认路由高亮的类
 })
