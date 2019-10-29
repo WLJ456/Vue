@@ -7,7 +7,7 @@
 
     <div class="cmt-list">
       <div class="cmt-item" v-for="(item,i) in cmtMsg" :key="item.id">
-        <div class="cmt-title">第{{i+1}}楼&nbsp&nbsp用户：{{item.name}} &nbsp&nbsp&nbsp发表时间：{{item.time}}</div>
+        <div class="cmt-title">第{{i+1}}楼&nbsp;&nbsp;用户：{{item.name}} &nbsp;&nbsp;&nbsp;发表时间：{{item.time}}</div>
         <div
           class="cmt-body"
         >{{item.msg===undefined?"用户很懒，什么都没留下":item.msg==null?"用户很懒，什么都没留下":item.msg===""?"用户很懒，什么都没留下":item.msg}}</div>

@@ -28,12 +28,12 @@ export default {
   data() {
     return {
       //模拟商品数据
-      goodsMsg:this.$root.goodsMsg,
+      goodsMsg: this.$root.goodsMsg
     };
   },
   methods: {
     goodsListInfo(id) {
-      this.$router.push({ name: "goodslistinfo", params: { id} });
+      this.$router.push({ name: "goodslistinfo", params: { id } });
     }
   }
 };
