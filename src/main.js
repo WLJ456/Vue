@@ -3,6 +3,45 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
+
+import Vuex from 'vuex'
+Vue.use(Vuex)
+var car=JSON.parse(localStorage.getItem('car')||'[]') ;
+var store = new Vuex.Store({
+  state: {//this.$store.state.****
+    car:car,//对象数组格式{id：,count：,price:,selected:}
+  },
+  mutations: {
+    addGoodsCar(state, goodsinfo) {
+      var flag = false;
+      state.car.some(item => {
+        if (item.id == goodsinfo.id) {
+          item.count += parseInt(goodsinfo.count);
+          flag = true;
+          return true;
+        }
+      })
+      if (!flag) {
+        state.car.push(goodsinfo)
+      }
+      localStorage.setItem('car', JSON.stringify(state.car));
+
+
+    }
+  },
+  getters: {
+    getAllCount(state) {
+      var c = 0;
+      state.car.forEach(item => {
+        c += item.count
+      })
+      return c;
+    }
+
+
+  },
+})
+
 import moment from 'moment';
 Vue.filter('dateFormat', function (dataStr, pattern = "YYYY-MM-DD HH:mm") {
   return moment(dataStr).format(pattern)
@@ -34,7 +73,6 @@ Vue.use(MintUI)
 var vm = new Vue({
   el: "#app",
   data: {
-    wlj: "wegame",
     list: [
       {
         id: 1,
@@ -221,6 +259,7 @@ var vm = new Vue({
     ],
   },
   render: c => c(App),
-  router
+  router,
+  store,
 
 })

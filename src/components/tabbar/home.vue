@@ -24,9 +24,7 @@
       </li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
         <router-link to="/home/photolist">
-          <span class="mui-icon mui-icon-email">
-            <span class="mui-badge">5</span>
-          </span>
+              <span class="mui-icon mui-icon-image"></span>
           <div class="mui-media-body">图片</div>
         </router-link>
       </li>
@@ -37,10 +35,10 @@
         </router-link>
       </li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-        <a href="#">
-          <span class="mui-icon mui-icon-location"></span>
-          <div class="mui-media-body">location</div>
-        </a>
+      <router-link to="/shopcar">
+          <span class="mui-icon-extra mui-icon-extra-cart shop-car"></span>
+          <div class="mui-media-body">购物车</div>
+     </router-link>
       </li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
         <router-link  to="/search">
@@ -105,6 +103,9 @@ export default {
 .mui-grid-view.mui-grid-9 .mui-table-view-cell>a:hover{
 color: skyblue;
 transform:scale(1.5);
+}
+.shop-car{
+ font-size: 48px;
 }
 
 </style>
