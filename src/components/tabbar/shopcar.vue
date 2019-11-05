@@ -1,20 +1,20 @@
 <template>
   <div class="shopcar-container">
     <div class="goodslist">
-      <div class="mui-card">
+      <div class="mui-card" v-for="(item,i) in newmsg" :key="item.id">
         <div class="mui-card-content">
           <div class="mui-card-content-inner">
-            <mt-switch></mt-switch>
-            <img
-              src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/6f2493e6c6fe8e2485c407e5d75e3651.jpg?thumb=1&w=200&h=200&f=webp&q=90"
-            
-            />
+            <mt-switch
+              v-model="$store.getters.getSelected[item.id]"
+              @change="selectedchange(item.id,$store.getters.getSelected[item.id])"
+            ></mt-switch>
+            <img :src="item.src" />
             <div class="info">
-              <h1>Redmi Note 8 pro</h1>
+              <h1>{{item.title}}</h1>
               <p>
-                <span class="price">￥2179</span>
-                <shopcarbox></shopcarbox>
-                <a href="#">删除</a>
+                <span class="price">￥{{item.nowsell}}</span>
+                <shopcarbox :num="getShopCarNum(item.id)" :itemid="item.id"></shopcarbox>
+                <a href="#" @click.prevent="remove(item.id,i)">删除</a>
               </p>
             </div>
           </div>
@@ -24,9 +24,18 @@
       <!-- 结算区域 -->
       <div class="mui-card">
         <div class="mui-card-content">
-          <div
-            class="mui-card-content-inner"
-          >这是一个最简单的卡片视图控件；卡片视图常用来显示完整独立的一段信息，比如一篇文章的预览图、作者信息、点赞数量等</div>
+          <div class="mui-card-content-inner total">
+            <div class="left">
+              <p>总计(不含运费)</p>
+              <p>
+                以勾选商品
+                <span>{{$store.getters.getMoneyaAndCount.count}}</span>件，总计
+                <span>￥{{$store.getters.getMoneyaAndCount.total}}</span>
+              </p>
+            </div>
+
+            <mt-button type="danger">去结算</mt-button>
+          </div>
         </div>
       </div>
     </div>
@@ -34,17 +43,54 @@
 </template>
 
 <script>
-import shopcarbox from '../subcompoents/shopcar_numberBox.vue';
+import shopcarbox from "../subcompoents/shopcar_numberBox.vue";
 export default {
   name: "",
   data() {
-    return {};
+    return {
+      shopmsg: this.$root.goodsMsg,
+      carmsg: this.$store.state.car,
+      newmsg: []
+    };
   },
-  methods: {},
-  components:{
-    shopcarbox,
+  created() {
+    this.getGoodsInfo();
+  },
+  methods: {
+    getGoodsInfo() {
+      var idArr = [];
+      this.carmsg.forEach(item => {
+        idArr.push(item.id);
+      });
+      this.shopmsg.forEach(item => {
+        if (idArr.indexOf(item.id) > -1) {
+          this.newmsg.push(item);
+        }
+      });
+    },
+    //通过id获取数据中的count
+    getShopCarNum(id) {
+      var count;
+      this.carmsg.some(item => {
+        if (item.id == id) {
+          count = parseInt(item.count);
+          return true;
+        }
+      });
+      return count;
+    },
+    remove(id, index) {
+      //点击删除商品
+      this.newmsg.splice(index, 1);
+      this.$store.commit("remvoeFormcar", id);
+    },
+    selectedchange(id, val) {
+      this.$store.commit("updateSelect", { id, selected: val });
+    }
+  },
+  components: {
+    shopcarbox
   }
-
 };
 </script>
 
@@ -53,23 +99,39 @@ export default {
   background-color: #eee;
   overflow: hidden;
 }
-.goodslist h1{
+.goodslist h1 {
   font-size: 14px;
 }
-.goodslist .info .price{
+.goodslist .info .price {
   color: red;
 }
-.mui-card-content-inner{
+.mui-card-content-inner {
   display: flex;
- justify-content: space-between;
+  justify-content: space-between;
 }
-.goodslist img{
-  width:100px;
+.goodslist img {
+  width: 100px;
   height: 100%;
 }
-.info p{
-  padding-top:10px; 
+.info p {
+  padding-top: 10px;
   font-weight: bold;
+  text-align: right;
 }
-
+.info p > a {
+  margin-top: 10px;
+  display: inline-block;
+  font-size: 14px;
+}
+.total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  letter-spacing: 1.5px;
+}
+.total span {
+  color: red;
+  font-weight: bold;
+  font-size: 16px;
+}
 </style>

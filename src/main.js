@@ -6,10 +6,10 @@ Vue.use(VueRouter)
 
 import Vuex from 'vuex'
 Vue.use(Vuex)
-var car=JSON.parse(localStorage.getItem('car')||'[]') ;
+var car = JSON.parse(localStorage.getItem('car') || '[]');
 var store = new Vuex.Store({
   state: {//this.$store.state.****
-    car:car,//对象数组格式{id：,count：,price:,selected:}
+    car: car,//对象数组格式{id：,count：,price:,selected:}
   },
   mutations: {
     addGoodsCar(state, goodsinfo) {
@@ -22,21 +22,74 @@ var store = new Vuex.Store({
         }
       })
       if (!flag) {
-        state.car.push(goodsinfo)
+        state.car.push(goodsinfo);
       }
       localStorage.setItem('car', JSON.stringify(state.car));
 
 
+    },
+
+    updateCount(state, goodsinfo) {
+      state.car.some(item => {
+        if (goodsinfo.id == item.id) {
+          item.count = goodsinfo.count;
+          return true;
+        }
+      })
+
+      localStorage.setItem('car', JSON.stringify(state.car));
+    },
+
+    remvoeFormcar(state, id) {
+      state.car.some((item, i) => {
+        if (item.id == id) {
+          state.car.splice(i, 1);
+          return true;
+        }
+      })
+      localStorage.setItem('car', JSON.stringify(state.car));
+    },
+    updateSelect(state, info) {
+      state.car.some(item => {
+        if (item.id == info.id) {
+          item.selected = info.selected;
+        }
+      })
+      localStorage.setItem('car', JSON.stringify(state.car));
     }
+
   },
   getters: {
     getAllCount(state) {
       var c = 0;
       state.car.forEach(item => {
-        c += item.count
+        c += item.count;
       })
       return c;
+    },
+    getSelected(state) {
+      var demo = {};
+      state.car.forEach(item => {
+        demo[item.id] = item.selected;
+      })
+      return demo;
+    },
+    getMoneyaAndCount(state) {
+      var demo = {
+        count: 0,
+        total: 0,
+      };
+      state.car.forEach(item => {
+        if (item.selected) {
+          demo.count += item.count;
+          demo.total += item.count * item.price
+        }
+      })
+      return demo;
+
+
     }
+
 
 
   },

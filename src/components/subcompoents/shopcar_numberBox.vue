@@ -6,7 +6,9 @@
         id="test"
         class="mui-input-numbox"
         type="number"
-        value="1"
+        :value="num"
+        @change="countChange"
+        ref="numbox"
       />
       <button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
     </div>
@@ -17,6 +19,7 @@
 import mui from "../../lib/MUI/js/mui.min.js";
 export default {
   name: "",
+   props: ["num","itemid"],
   data() {
     return {};
   },
@@ -24,8 +27,12 @@ export default {
     mui(".mui-numbox").numbox();
   },
   methods: {
-   
-  }
+    //购物车中的数据变化
+    countChange() {
+      this.$store.commit("updateCount",{id:this.itemid,count:parseInt(this.$refs.numbox.value)})
+   }
+  },
+ 
 };
 </script>
 
