@@ -126,7 +126,6 @@ export default {
 <style scoped>
 .mui-ellipsis {
   display: flex;
-
   justify-content: space-between;
 }
 </style>
