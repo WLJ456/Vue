@@ -123,6 +123,7 @@ Vue.use(MintUI)
 
 
 
+
 var vm = new Vue({
   el: "#app",
   data: {

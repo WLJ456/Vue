@@ -13,16 +13,20 @@ import VueRouter from 'vue-router'
 // import goodslistinfo from './components/goods/goodslistinfo.vue'
 //2.采用懒加载进行组件动态导入
 const shopcar = () => import('./components/tabbar/shopcar.vue');
-const search=()=>import('./components/tabbar/search.vue');
-const member=()=>import('./components/tabbar/member.vue');
-const home=()=>import('./components/tabbar/home.vue');
-const news=()=>import('./components/news/news.vue');
-const newsInfo=()=>import('./components/news/newsInfo.vue');
-const goodslist=()=>import('./components/goods/goodslist.vue');
-const photolist=()=>import('./components/photos/photoList.vue');
-const photoinfo=()=>import('./components/photos/photoinfo.vue');
-const goodslistinfo=()=>import('./components/goods/goodslistinfo.vue');
-
+const search = () => import('./components/tabbar/search.vue');
+const member = () => import('./components/tabbar/member.vue');
+const home = () => import('./components/tabbar/home.vue');
+const news = () => import('./components/news/news.vue');
+const newsInfo = () => import('./components/news/newsInfo.vue');
+const goodslist = () => import('./components/goods/goodslist.vue');
+const photolist = () => import('./components/photos/photoList.vue');
+const photoinfo = () => import('./components/photos/photoinfo.vue');
+const goodslistinfo = () => import('./components/goods/goodslistinfo.vue');
+const settings = () => import('./components/tabbar/settings.vue')
+const login = () => import('./components/login/login.vue')
+const reg = () => import('./components/login/reg.vue')
+const forget=()=>import('./components/login/forget.vue')
+const about=()=>import('./components/about/about.vue')
 var router = new VueRouter({
 
     routes: [
@@ -31,7 +35,12 @@ var router = new VueRouter({
         { path: '/home', component: home },
         { path: '/shopcar', component: shopcar },
         { path: '/search', component: search },
+        { path: '/settings', component: settings },
         { path: '/home/news', component: news },
+        { path: '/home/login', component: login },
+        { path: '/home/reg', component: reg },
+        { path: '/home/forget', component: forget },
+        { path: '/about', component: about },
         //用：匹配参数
         { path: '/home/news/newsInfo/:id', component: newsInfo },
         { path: '/home/goodslist', component: goodslist },

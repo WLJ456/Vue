@@ -5,7 +5,7 @@
       <span class="mui-icon mui-icon-back"></span>
       <span>返回</span>
     </p>
-    <mt-header fixed title="综合项目"></mt-header>
+    <mt-header fixed title="电商网"></mt-header>
     <transition>
       <router-view></router-view>
     </transition>
@@ -27,9 +27,9 @@
         </span>
         <span class="mui-tab-label">购物车</span>
       </router-link>
-      <router-link class="mui-tab-item-ch" to="/search">
-        <span class="mui-icon mui-icon-search"></span>
-        <span class="mui-tab-label">搜索</span>
+      <router-link class="mui-tab-item-ch" to="/settings">
+        <span class="mui-icon mui-icon-gear"></span>
+        <div class="mui-tab-label">设置</div>
       </router-link>
     </nav>
   </div>
@@ -37,7 +37,7 @@
 
 <script>
 export default {
-  name: "",
+  name: '',
   data() {
     return {
       flag: false
@@ -56,7 +56,7 @@ export default {
     },
     getHomeBack() {
       var path = this.$route.path;
-      if (path === "/home") {
+      if (path === '/home') {
         this.flag = false;
       } else {
         this.flag = true;

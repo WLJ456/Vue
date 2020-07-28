@@ -31,7 +31,7 @@
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
         <router-link to="/home/news">
           <span class="mui-icon mui-icon-chatbubble"></span>
-          <div class="mui-media-body">WeChat</div>
+          <div class="mui-media-body">聊天</div>
         </router-link>
       </li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
@@ -43,26 +43,33 @@
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
         <router-link  to="/search">
           <span class="mui-icon mui-icon-search"></span>
-          <div class="mui-media-body">Search</div>
+          <div class="mui-media-body">搜索</div>
         </router-link >
       </li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-        <a href="#">
-          <span class="mui-icon mui-icon-phone"></span>
-          <div class="mui-media-body">Phone</div>
-        </a>
+          <router-link  to="/home/login">
+          <span class="mui-icon-extra mui-icon mui-icon-extra-computer"></span>
+          <div class="mui-media-body">登录</div>
+          </router-link>
+      </li>
+
+  <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+          <router-link  to="/home/reg">
+          <span class="mui-icon mui-icon-plusempty"></span>
+          <div class="mui-media-body">注册</div>
+          </router-link>
       </li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-        <a href="#">
+        <router-link  to="/settings">
           <span class="mui-icon mui-icon-gear"></span>
-          <div class="mui-media-body">Setting</div>
-        </a>
+          <div class="mui-media-body">设置</div>
+        </router-link>
       </li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-        <a href="#">
+       <router-link  to="/about">
           <span class="mui-icon mui-icon-info"></span>
-          <div class="mui-media-body">about</div>
-        </a>
+          <div class="mui-media-body">关于开发</div>
+       </router-link>
       </li>
  
     </ul>

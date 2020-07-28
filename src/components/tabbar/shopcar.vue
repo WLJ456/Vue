@@ -96,7 +96,8 @@ export default {
 
 <style scoped>
 .shopcar-container {
-  background-color: #eee;
+  height: 100vh;
+  background-color: rgb(245, 242, 242);
   overflow: hidden;
 }
 .goodslist h1 {
