@@ -20,7 +20,12 @@ module.exports = {
         //2.自动，把打包好的bundle.js文件追加到页面中去
         new htmlWebpackPlugin({
             template: path.join(__dirname, './src/index.html'),//指定模板页面
-            filename: 'index.html'//指定生成页面的名称
+            filename: 'index.html',//指定生成页面的名称，
+            // minify:{   //打包html配置
+            //     removeAttributeQuotes:true,
+            //     collapseWhitespace:true
+            // },
+            // hash:true,
         }),
         new VueLoaderPlugin() 
     ],
